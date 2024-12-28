@@ -1,8 +1,8 @@
 document.addEventListener('DOMContentLoaded', function() {
     const produits = [
-        { nom: 'Produit 1', prix: 20, description: 'Description du produit 1' },
-        { nom: 'Produit 2', prix: 30, description: 'Description du produit 2' },
-        { nom: 'Produit 3', prix: 40, description: 'Description du produit 3' },
+        { nom: 'Produit 1', prix: 20, description: 'Description du produit 1', lien: 'https://fr.aliexpress.com/item/1005002754562453.html' },
+        { nom: 'Produit 2', prix: 30, description: 'Description du produit 2', lien: 'https://fr.aliexpress.com/item/1005002754562453.html' },
+        { nom: 'Produit 3', prix: 40, description: 'Description du produit 3', lien: 'https://fr.aliexpress.com/item/1005002754562453.html' },
     ];
 
     const produitsSection = document.getElementById('produits');
@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', function() {
         let total = 0;
         panier.forEach(produit => {
             const item = document.createElement('li');
-            item.textContent = `${produit.nom} - ${produit.prix}€`;
+            item.innerHTML = `${produit.nom} - ${produit.prix}€ <a href="${produit.lien}" target="_blank">Acheter</a>`;
             listePanier.appendChild(item);
             total += produit.prix;
         });
