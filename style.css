@@ -2,12 +2,20 @@ body {
     font-family: 'Montserrat', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f5f5f5;
-    color: #333;
+    background: linear-gradient(45deg, #ff6b6b, #f06595, #f79d00, #f3e505, #40e0d0, #ff8c00, #ff0084, #8b00ff);
+    background-size: 200% 200%;
+    animation: gradientAnimation 10s ease infinite;
+    color: #fff;
+}
+
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 header {
-    background-color: #3498db;
+    background-color: #2c3e50;
     color: #fff;
     padding: 1rem;
     text-align: center;
@@ -27,18 +35,25 @@ main {
 }
 
 .produit {
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
     margin: 1rem 0;
     padding: 1rem;
     width: calc(32% - 1rem);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s;
+    transition: transform 0.2s, background-color 0.2s;
 }
 
 .produit:hover {
     transform: scale(1.05);
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.produit img {
+    max-width: 100%;
+    border-radius: 8px;
+    margin-bottom: 1rem;
 }
 
 .produit h2 {
@@ -51,24 +66,24 @@ main {
 }
 
 .produit button {
-    background-color: #3498db;
+    background-color: #2c3e50;
     color: #fff;
     border: none;
     padding: 0.5rem 1rem;
-    border-radius: 4px;
+    border-radius: 8px;
     cursor: pointer;
     transition: background-color 0.2s;
 }
 
 .produit button:hover {
-    background-color: #2980b9;
+    background-color: #34495e;
 }
 
 #panier {
     margin-top: 2rem;
     padding: 1rem;
-    background-color: #ecf0f1;
+    background-color: rgba(255, 255, 255, 0.8);
     border: 1px solid #ddd;
-    border-radius: 4px;
+    border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
